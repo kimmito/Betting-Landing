@@ -1,0 +1,34 @@
+@use 'variables' as *;
+@use 'mixins/mixins' as *;
+@use 'base/reset';
+
+@use 'layout/container';
+
+@use 'components/button';
+@use 'components/header';
+@use 'components/footer';
+@use 'components/accordion';
+@use 'components/slider-nav';
+@use 'sections/hero';
+@use 'sections/toc';
+@use 'sections/ipl';
+@use 'sections/live';
+@use 'sections/download';
+@use 'sections/bonus';
+@use 'sections/reasons';
+@use 'sections/features';
+@use 'sections/howto';
+@use 'sections/reviews';
+@use 'sections/app-download';
+@use 'sections/info';
+@use 'sections/guide';
+@use 'sections/faq';
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 160%;
+    color: $dark-gray;
+    background-color: $light-gray;
+}

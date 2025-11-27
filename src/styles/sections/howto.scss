@@ -1,0 +1,102 @@
+@use '../mixins/mixins' as *;
+@use '../variables' as *;
+
+.howto {
+    padding: 95px 0 100px;
+    background-color: $light-gray;
+
+
+    .container {
+        background-color: $bg-light-gray;
+        padding: 63px 0;
+        border-radius: 25px;
+
+        @media (max-width: 1340px) {
+            padding: 40px 20px;
+            border-radius: 25px;
+            margin: 0 20px;
+        }
+    }
+
+    &__title {
+        @include heading-medium;
+        text-align: center;
+        margin: 0 0 32px;
+        color: $dark-gray;
+
+        @media (max-width: 767px) {
+            margin-bottom: 16px;
+            text-align: left;
+            font-size: 40px;
+        }
+    }
+
+    &__description {
+        display: none;
+    }
+
+    &__cards {
+        display: none;
+    }
+
+    &__accordion {
+        max-width: 1236px;
+        margin: 0 auto;
+    }
+
+    &__cta {
+        text-align: center;
+        margin-top: 38px;
+
+        @media (max-width: 767px) {
+            & button {
+                max-width: 100%;
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.howto-card {
+    background-color: $light-gray;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__visual {
+        background-color: $bg-light-gray;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__title {
+        @include heading-small;
+        margin: 0;
+    }
+
+    &__text {
+        @include body-text;
+        margin: 0;
+    }
+
+    &__button {
+        align-self: flex-start;
+    }
+}

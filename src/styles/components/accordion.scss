@@ -1,0 +1,103 @@
+@use '../mixins/mixins' as *;
+@use '../variables' as *;
+
+.accordion-item {
+    background-color: #fff;
+    border-radius: 25px;
+    margin-bottom: 29px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 32px;
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        color: $dark-gray;
+        margin: 0;
+        @media (max-width: 767px) {
+            font-size: 20px;
+        }
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        transform: translateX(13px);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $dark-gray;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+
+        svg {
+            width: 25px;
+            height: 25px;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &__content {
+        padding: 0 32px 25px;
+        margin-top: 15px;
+        color: $gray;
+
+        p {
+            font-size: 17px;
+            line-height: 170%;
+            @media (max-width: 767px) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &[open] {
+        .accordion-item__icon {
+            svg {
+                transform: rotate(45deg);
+            }
+        }
+        .accordion-item__header {
+            transform: translateY(12px);
+        }
+    }
+
+    &:not([open]) {
+        .accordion-item__content {
+            display: none;
+        }
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordion-item[open] .accordion-item__content {
+    animation: slideDown 0.3s ease;
+}

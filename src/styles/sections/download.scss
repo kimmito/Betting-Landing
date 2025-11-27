@@ -1,0 +1,106 @@
+@use '../mixins/mixins' as *;
+@use '../variables' as *;
+
+.download {
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 65px 0;
+        gap: 75px;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+            padding: 40px 40px;
+            gap: 24px;
+        }
+    }
+
+    &__visual {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        padding-top: 35px;
+        order: 2;
+
+        @media (max-width: 767px) {
+            order: 1;
+            padding-top: 0;
+            width: 100%;
+        }
+    }
+
+    &__card {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        background: $bg-light-gray;
+        @media (max-width: 1340px) {
+            max-width: 400px;
+            min-width: 200px;
+        }
+
+        @media (max-width: 767px) {
+            max-width: 100%;
+        }
+    }
+
+    &__image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding-top: 45px;
+        max-width: 660px;
+        order: 1;
+
+        @media (max-width: 767px) {
+            order: 2;
+            padding-top: 0;
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        @include heading-medium;
+        margin-bottom: 35px;
+
+        @media (max-width: 767px) {
+            order: 1;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__subtitle {
+        @include body-text;
+        color: $gray;
+        margin-bottom: 30px;
+        max-width: 650px;
+        letter-spacing: 0.1px;
+
+        @media (max-width: 767px) {
+            order: 2;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+    }
+
+    &__badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+
+        @media (max-width: 767px) {
+            & img {
+                width: 35vw;
+            }
+            order: 2;
+            gap: 5px;
+            justify-content: center;
+        }
+    }
+}

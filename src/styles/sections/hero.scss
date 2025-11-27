@@ -1,0 +1,136 @@
+@use '../mixins/mixins' as *;
+@use '../variables' as *;
+
+.hero {
+    position: relative;
+    overflow: visible;
+    padding-top: 100px;
+    width: 100%;
+    @media (max-width: 1340px) {
+        padding-top: 0;
+    }
+
+    & .container {
+        @media (max-width: 1150px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+.hero__inner {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    @media (max-width: 1340px) {
+        display: flex;
+        flex-direction: column;
+    }
+    & .container {
+        @media (max-width: 1340px) {
+            margin: 30px;
+        }
+    }
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    text-align: left;
+
+    @media (max-width: 767px) {
+        margin-top: 32px;
+        text-align: center;
+    }
+}
+
+.hero__title {
+    @include heading-large;
+    margin-bottom: 43px;
+
+    @media (max-width: 767px) {
+        font-size: 36px;
+        line-height: 120%;
+        margin-bottom: 16px;
+    }
+}
+
+.hero__subtitle {
+    @include body-text;
+    width: 650px;
+    margin-bottom: 38px;
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+}
+
+.users {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 82px;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 30px;
+        align-items: start;
+    }
+
+    &__text {
+        @include body-text;
+        max-width: 350px;
+
+        @media (max-width: 767px) {
+            text-align: left;
+            max-width: 90%;
+        }
+    }
+}
+
+.hero__image-wrapper {
+    position: absolute;
+    right: calc(50% - 677px);
+    @media (max-width: 1340px) {
+        right: calc(50% - 600px);
+    }
+    top: 50%;
+    transform: translateY(calc(-50% - 72px));
+    z-index: 1;
+    pointer-events: none;
+    @media (max-width: 1150px) {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 24px;
+        margin: 0 auto 24px;
+        width: 100% !important;
+        order: 1;
+    }
+    img {
+        margin: 0 auto;
+    }
+}
+
+.hero__image {
+    display: block;
+    max-width: 40vw;
+    width: 100%;
+    height: auto;
+
+    @media (max-width: 767px) {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.hero__cta {
+    @media (max-width: 1150px) {
+        width: 100%;
+    }
+}

@@ -1,0 +1,89 @@
+@use '../mixins/mixins' as *;
+@use '../variables' as *;
+
+.bonus {
+    padding: 100px 0 100px;
+    background-color: $bg-ultra-dark;
+    color: #fff;
+    border-radius: 32px;
+    margin: 0 auto;
+    max-width: 1856px;
+    width: calc(100% - 50px);
+    @media (max-width: 1024px) {
+        padding: 30px 0;
+    }
+
+    &__title {
+        @include heading-medium;
+        text-align: center;
+        margin: 0 0 35px;
+        color: $bg-light-gray;
+        @media (max-width: 1024px) {
+            font-size: 30px;
+        }
+    }
+
+    &__description {
+        @include body-text;
+        text-align: center;
+        max-width: 1300px;
+        margin: 0 auto 60px;
+        letter-spacing: 0.15px;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+    }
+}
+
+.bonus-card {
+    background-color: $bg-gray;
+    border-radius: 24px;
+    padding: 37px 40px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    &__icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 27px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: $bg-ultra-dark;
+        color: $primary-color;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        line-height: 130%;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: $bg-light-gray;
+        @media (max-width: 1024px) {
+            font-size: 20px;
+        }
+    }
+
+    &__text {
+        @include body-text;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+}

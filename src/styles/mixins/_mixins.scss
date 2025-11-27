@@ -1,0 +1,70 @@
+@use '../variables' as *;
+
+// Body text / Subtitle
+@mixin body-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 160%;
+    color: $gray;
+    font-family: 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+// Heading mixins
+@mixin heading-large {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 130%;
+    color: $dark-gray;
+    @media (max-width: 767px) {
+        font-size: 52px;
+    }
+}
+
+@mixin heading-medium {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 130%;
+    color: $dark-gray;
+    @media (max-width: 767px) {
+        font-size: 46px;
+    }
+}
+
+@mixin heading-small {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 130%;
+    color: $dark-gray;
+    @media (max-width: 767px) {
+        font-size: 32px;
+    }
+}
+
+// Flexbox center
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Flexbox space-between
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// Responsive breakpoints
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}

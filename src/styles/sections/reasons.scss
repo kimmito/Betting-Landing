@@ -1,0 +1,43 @@
+@use '../mixins/mixins' as *;
+@use '../variables' as *;
+
+.reasons {
+    padding: 100px 0;
+    background-color: $light-gray;
+    .container {
+        background-color: $bg-light-gray;
+        padding: 63px 0;
+        border-radius: 25px;
+        @media (max-width: 1340px) {
+            padding: 63px 20px;
+            margin: 0 20px;
+        }
+    }
+
+    &__title {
+        @include heading-medium;
+        text-align: center;
+        margin: 0 0 32px;
+        color: $dark-gray;
+        @media (max-width: 767px) {
+            text-align: left;
+            font-size: 35px;
+        }
+    }
+
+    &__accordion {
+        max-width: 1236px;
+        margin: 0 auto;
+    }
+
+    &__cta {
+        text-align: center;
+        margin-top: 38px;
+        & button{
+            @media (max-width: 767px) {
+            max-width: 100%;
+            width: 100%;
+            margin-top: 20px;
+        }}
+    }
+}

@@ -1,0 +1,212 @@
+@use '../variables' as *;
+
+.header {
+    padding: 42px 0 50px 0;
+
+    @media (max-width: 1150px) {
+        padding: 30px 0 40px 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        @media (max-width: 1150px) {
+            gap: 16px;
+        }
+    }
+
+    .logo {
+        display: block;
+        text-decoration: none;
+        will-change: scale;
+        transition: transform 0.2s ease;
+        font-size: 18px;
+        flex-shrink: 0;
+
+        @media (max-width: 1150px) {
+            font-size: 16px;
+        }
+
+        &__image {
+            display: inline-block;
+            text-align: center;
+            line-height: 45px;
+            width: 48px;
+            height: 44px;
+            background-color: $primary-color;
+            color: $light-gray;
+            border-radius: 6px;
+
+            @media (max-width: 1150px) {
+                width: 40px;
+                height: 38px;
+                line-height: 38px;
+            }
+        }
+
+        &__text {
+            color: $dark-gray;
+            margin-left: 8px;
+            font-weight: 800;
+
+            @media (max-width: 1150px) {
+                margin-left: 6px;
+            }
+
+            @media (max-width: 900px) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+.navigation {
+    &__list {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+
+        @media (max-width: 1150px) {
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            gap: 12px;
+        }
+    }
+    &__link {
+        font-size: 18px;
+        text-decoration: none;
+        color: $gray;
+        font-weight: 500;
+        white-space: nowrap;
+
+        @media (max-width: 1150px) {
+            font-size: 16px;
+        }
+
+        @media (max-width: 900px) {
+            font-size: 14px;
+        }
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.header__cta {
+    @media (max-width: 1150px) {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    @media (max-width: 900px) {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.header__burger {
+    display: none;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-left: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    span {
+        display: block;
+        height: 2px;
+        border-radius: 999px;
+        background-color: $dark-gray;
+        margin: 5px 0;
+        transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+    }
+
+    @media (max-width: 900px) {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.header-menu {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .navigation--desktop {
+        display: none;
+    }
+
+    .header-menu {
+        position: fixed;
+        inset: 0;
+        background-color: #fff;
+        padding: 72px 24px 32px;
+        display: none;
+        z-index: 20;
+    }
+
+    .header-menu__close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        border: none;
+        background-color: $bg-light-gray;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .header-menu__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .header-menu__item a {
+        font-size: 20px;
+        text-decoration: none;
+        color: $dark-gray;
+        font-weight: 600;
+    }
+
+    .header--menu-open {
+        .header-menu {
+            display: block;
+        }
+
+        .header__burger span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .header__burger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .header__burger span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    }
+}
