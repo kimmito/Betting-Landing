@@ -118,34 +118,6 @@ npm run preview
 -   Safari (последние 2 версии)
 -   Edge (последние 2 версии)
 
-## Деплой на GitHub Pages
-
-### Шаг 1: Создайте репозиторий на GitHub
-
-1. Перейдите на [GitHub](https://github.com) и создайте новый репозиторий
-2. Назовите его, например, `test-seocare` (или любое другое имя)
-
-### Шаг 2: Загрузите код
-
-```bash
-# Инициализируйте git (если еще не сделано)
-git init
-
-# Добавьте все файлы
-git add .
-
-# Сделайте первый коммит
-git commit -m "Initial commit"
-
-# Переименуйте ветку в main (если нужно)
-git branch -M main
-
-# Добавьте remote репозиторий (замените USERNAME на ваш GitHub username)
-git remote add origin https://github.com/USERNAME/test-seocare.git
-
-# Загрузите код
-git push -u origin main
-```
 
 ## Лицензия
 
