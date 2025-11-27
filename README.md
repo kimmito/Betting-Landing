@@ -147,55 +147,6 @@ git remote add origin https://github.com/USERNAME/test-seocare.git
 git push -u origin main
 ```
 
-### Шаг 3: Настройте GitHub Pages
-
-1. Перейдите в ваш репозиторий на GitHub
-2. Откройте `Settings` → `Pages`
-3. В разделе `Source` выберите `GitHub Actions`
-4. Сохраните изменения
-
-### Шаг 4: Автоматический деплой
-
-После настройки GitHub Actions автоматически:
-
--   Соберет проект при каждом push в ветку `main`
--   Задеплоит его на GitHub Pages
-
-Ваш сайт будет доступен по адресу:
-
-```
-https://USERNAME.github.io/test-seocare/
-```
-
-### ⚠️ Важно: Настройка base path
-
-Если ваш репозиторий называется **не** `test-seocare`, обновите `vite.config.js`:
-
-```js
-base: '/ВАШЕ_НАЗВАНИЕ_РЕПОЗИТОРИЯ/',
-```
-
-Например, если репозиторий называется `my-project`:
-
-```js
-base: '/my-project/',
-```
-
-### Альтернативный способ (ручной деплой)
-
-Если предпочитаете деплоить вручную:
-
-```bash
-# Установите gh-pages
-npm install --save-dev gh-pages
-
-# Добавьте в package.json в секцию "scripts":
-# "deploy": "npm run build && gh-pages -d dist"
-
-# Задеплойте
-npm run deploy
-```
-
 ## Лицензия
 
 Тестовое задание для SEOCare.
