@@ -1,6 +1,8 @@
 # IPL Betting App - Тестовое задание SEOCare
+### Доступ по ссылке:
+## https://kimmito.github.io/Betting-Landing/
 
-Тестовое задание для SEOCare - адаптивная верстка лендинга для IPL Betting App.
+Адаптивная верстка лендинга для IPL Betting App.
 
 ## Описание
 
